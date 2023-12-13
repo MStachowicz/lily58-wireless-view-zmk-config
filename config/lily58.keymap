@@ -23,7 +23,7 @@
             label = "HOM";
             bindings = <
 &kp ESC           &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                         &kp N6  &kp N7         &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB           &kp Q   &kp W   &kp E     &kp R         &kp T                          &kp Y   &kp U          &kp I      &kp O    &kp P     &kp BSLH
+&kp TAB           &kp Q   &kp W   &kp E     &kp R         &kp T                          &kp Y   &kp U          &kp I      &kp O    &kp P     &kp MINUS
 &kp LSHIFT        &kp A   &kp S   &kp D     &kp F         &kp G                          &kp H   &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V         &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                                   &kp LGUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp RIGHT_ALT  &kp RCTRL
@@ -42,11 +42,11 @@
 
             label = "SYM";
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7  &kp F8  &kp F9   &kp F10  &trans
-&trans     &none   &none   &none   &none   &none                     &none   &none   &none   &kp F11  &kp F12  &none
-&trans     &none   &none   &none   &none   &none                     &none   &none   &none   &none    &none    &kp POUND
-&trans     &none   &none   &none   &none   &none   &none     &none   &none   &none   &none   &trans   &trans   &trans
-                           &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7    &kp F8     &kp F9     &kp F10  &trans
+&trans     &none   &none   &none   &none   &none                     &none   &none     &none      &kp F11    &kp F12  &none
+&trans     &none   &none   &none   &none   &none                     &none   &kp BSLH  &kp EQUAL  &kp POUND  &none    &none
+&trans     &none   &none   &none   &none   &none   &none     &none   &none   &none     &none      &none      &none    &trans
+                           &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -62,11 +62,11 @@
 
             label = "NAV";
             bindings = <
-&trans  &none  &none           &none             &kp C_MUTE  &kp C_VOLUME_UP                      &bt BT_PRV  &bt BT_NXT  &none   &none          &none     &bt BT_CLR
-&trans  &none  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_DOWN                    &none       &none       &none   &none          &none     &none
-&trans  &none  &none           &none             &kp HOME    &kp END                              &none       &none       &none   &kp PAGE_DOWN  &kp UP    &kp PAGE_UP
-&trans  &none  &none           &none             &none       &none              &none     &none   &none       &none       &none   &kp LEFT       &kp DOWN  &kp RIGHT
-                               &trans            &trans      &trans             &trans    &trans  &trans      &trans      &trans
+&trans  &none  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &none                      &bt BT_PRV  &bt BT_NXT  &kp PRINTSCREEN  &none          &none     &bt BT_CLR
+&trans  &none  &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                      &none       &none       &none            &none          &none     &none
+&trans  &none  &none             &none              &kp HOME         &kp END                    &none       &none       &none            &kp PAGE_DOWN  &kp UP    &kp PAGE_UP
+&trans  &none  &none             &none              &none            &none    &none     &none   &none       &none       &none            &kp LEFT       &kp DOWN  &kp RIGHT
+                                 &trans             &trans           &trans   &trans    &trans  &trans      &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
