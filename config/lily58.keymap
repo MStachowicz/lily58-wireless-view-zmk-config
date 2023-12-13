@@ -9,6 +9,44 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        LEFT_HOM: LEFT_HOM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_HOM";
+            bindings = <&kp LEFT_ARROW>, <&kp HOME>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+        };
+
+        RIGHT_END: RIGHT_END {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_END";
+            bindings = <&kp RIGHT>, <&none>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT|MOD_LALT|MOD_LGUI|MOD_RGUI)>;
+        };
+
+        UP_PGUP: UP_PGUP {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UP_PGUP";
+            bindings = <&kp UP_ARROW>, <&kp PAGE_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+        };
+
+        DOWN_PGDWN: DOWN_PGDWN {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOWN_PGDWN";
+            bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -62,11 +100,11 @@
 
             label = "NAV";
             bindings = <
-&trans  &none  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &none                      &bt BT_PRV  &bt BT_NXT  &kp PRINTSCREEN  &none          &none     &bt BT_CLR
-&trans  &none  &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                      &none       &none       &none            &none          &none     &none
-&trans  &none  &none             &none              &kp HOME         &kp END                    &none       &none       &none            &kp PAGE_DOWN  &kp UP    &kp PAGE_UP
-&trans  &none  &none             &none              &none            &none    &none     &none   &none       &none       &none            &kp LEFT       &kp DOWN  &kp RIGHT
-                                 &trans             &trans           &trans   &trans    &trans  &trans      &trans      &trans
+&trans  &none  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &none                            &bt BT_PRV  &bt BT_NXT  &kp PRINTSCREEN  &none          &none        &bt BT_CLR
+&trans  &none  &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                            &none       &none       &none            &none          &none        &none
+&trans  &none  &none             &none              &kp HOME         &kp PAGE_UP                      &none       &none       &none            &kp PAGE_DOWN  &UP_PGUP     &kp PAGE_UP
+&trans  &none  &none             &none              &kp END          &kp PAGE_DOWN  &none     &none   &none       &none       &none            &LEFT_HOM      &DOWN_PGDWN  &RIGHT_END
+                                 &trans             &trans           &trans         &trans    &trans  &trans      &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
