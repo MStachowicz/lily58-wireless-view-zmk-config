@@ -60,11 +60,11 @@
 
             label = "HOM";
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                         &kp N6  &kp N7         &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB           &kp Q   &kp W   &kp E     &kp R         &kp T                          &kp Y   &kp U          &kp I      &kp O    &kp P     &kp MINUS
-&kp LSHIFT        &kp A   &kp S   &kp D     &kp F         &kp G                          &kp H   &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V         &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                  &kp LGUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp RIGHT_ALT  &kp RCTRL
+&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                         &kp N6  &kp N7                &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB           &kp Q   &kp W   &kp E     &kp R         &kp T                          &kp Y   &kp U                 &kp I      &kp O    &kp P     &kp EQUAL
+&kp LSHIFT        &kp A   &kp S   &kp D     &kp F         &kp G                          &kp H   &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V         &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &kp BACKSLASH
+                                  &kp LGUI  &kp LEFT_ALT  &sl 1   &kp SPACE    &kp RET   &mo 1   &mt DELETE BACKSPACE  &kp GRAVE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -80,31 +80,11 @@
 
             label = "SYM";
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7    &kp F8     &kp F9     &kp F10  &trans
-&trans     &none   &none   &none   &none   &none                     &none   &none     &none      &kp F11    &kp F12  &none
-&trans     &none   &none   &none   &none   &none                     &none   &kp BSLH  &kp EQUAL  &kp POUND  &none    &none
-&trans     &none   &none   &none   &none   &none   &none     &none   &none   &none     &none      &none      &none    &trans
-                           &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        Navigation {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            label = "NAV";
-            bindings = <
-&trans  &none  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &none                            &bt BT_PRV  &bt BT_NXT  &kp PRINTSCREEN  &none          &none        &bt BT_CLR
-&trans  &none  &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                            &none       &none       &none            &none          &none        &none
-&trans  &none  &none             &none              &kp HOME         &kp PAGE_UP                      &none       &none       &none            &kp PAGE_DOWN  &UP_PGUP     &kp PAGE_UP
-&trans  &none  &none             &none              &kp END          &kp PAGE_DOWN  &none     &none   &none       &none       &none            &LEFT_HOM      &DOWN_PGDWN  &RIGHT_END
-                                 &trans             &trans           &trans         &trans    &trans  &trans      &trans      &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7         &kp F8                &kp F9         &kp F10  &kp F11
+&trans  &none   &none   &none   &none   &none                     &none   &none          &mt PAGE_UP UP_ARROW  &none          &none    &kp F12
+&trans  &none   &none   &none   &none   &none                     &none   &mt HOME LEFT  &mt PAGE_DOWN DOWN    &mt END RIGHT  &none    &none
+&trans  &none   &none   &none   &none   &none   &none     &none   &none   &none          &none                 &none          &none    &none
+                        &trans  &trans  &trans  &trans    &trans  &trans  &bt BT_CLR     &bt BT_NXT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
